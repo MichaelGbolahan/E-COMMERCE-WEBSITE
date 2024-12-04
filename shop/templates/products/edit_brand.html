@@ -1,0 +1,17 @@
+{% extends 'dashboard.html' %}
+{% block title %} Edit Brand {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="">
+        <h1 class="text-center mt-5">Edit Brand</h1>
+        <form action="{{request.path}}" method="post" >
+            <input type="text" name="brand" class="form-control" value="{{bands.name}}">
+            <input type="submit" value="update brand" class="btn btn-info mt-3">
+        </form>
+            <a href="{{url_for('view_brand')}}" class="btn btn-warning" style="margin-top:-65px; margin-left:140px">Cancel</a>
+    </div>
+</div>
+
+{% endblock %}

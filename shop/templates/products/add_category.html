@@ -1,0 +1,22 @@
+{% extends 'dashboard.html' %}
+{% block title %}Add Category{% endblock %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <div class="">
+        {% include 'message.html' %}
+        <form action="{{url_for('add_category')}}" method="post">
+            <div class="mb-3">
+                <label for="category">Add Categories</label><br>
+                <input type="text" name="category" class="form-control" placeholder="Add Category">
+            </div>
+            <div>
+                <button class="btn btn-primary">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

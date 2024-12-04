@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} Customer Registration {% endblock %}
+{% block navbar %}{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="col-md-4">
+        {% from 'form_helper.html' import render_field %}
+        <div class="bg-white p-4 rounded shadow">
+            {% include 'message.html' %}
+            <h2 class="text-center text-danger mb-4">Register Customer</h2>
+            <form action="{{url_for('customer_register')}}" method="post">
+                {{form.hidden_tag()}}
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        {{render_field(form.name, class="form-control")}}
+                        {{render_field(form.username, class="form-control")}}
+                        {{render_field(form.email, class="form-control")}}
+                        {{render_field(form.password, class="form-control")}}
+                        {{render_field(form.confirm, class="form-control")}}
+                    </div>
+                    <div class="col-md-4">
+                        {{render_field(form.country, class="form-control")}}
+                        {{render_field(form.city, class="form-control")}}
+                        {{render_field(form.contact, class="form-control")}}
+                        {{render_field(form.address, class="form-control")}}
+                        {{render_field(form.zipcode, class="form-control")}}
+                    </div>
+                    {{ form.submit(class="btn btn-sm btn-info float-right") }}
+                    <div class="col-md-2"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

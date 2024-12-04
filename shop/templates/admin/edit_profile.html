@@ -1,0 +1,27 @@
+{% extends 'dashboard.html' %}
+{% block title %} Edit Profile {% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="col-md-4">
+        {% from 'form_helper.html' import render_field %}
+        <div class="bg-white p-4 rounded shadow">
+            {% include 'message.html' %}
+            <h2 class="text-center text-danger mb-4">Edit Profile</h2>
+            <form action="{{request.path}}" method="post">
+                {{form.hidden_tag()}}
+                <div class="mb-3">
+                    {{render_field(form.name, class='form-control')}}
+                </div>
+                <div class="mb-3">
+                    {{render_field(form.username, class='form-control')}}
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
